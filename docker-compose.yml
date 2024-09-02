@@ -21,9 +21,18 @@ services:
     ports:
       - 3000:3000
     environment:
+      # These environment variables will be passed through from the current shell
       - DATABASE_URL=postgres://postgres:postgres@rallly_db/db
-    env_file:
-      - config.env
+      - SECRET_PASSWORD
+      - NEXT_PUBLIC_BASE_URL
+      - ALLOWED_EMAILS
+      - NOREPLY_EMAIL
+      - SUPPORT_EMAIL
+      - SMTP_HOST
+      - SMTP_PORT
+      - SMTP_SECURE
+      - SMTP_USER
+      - SMTP_PWD
 
 volumes:
   db-data:
